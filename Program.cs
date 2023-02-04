@@ -10,9 +10,7 @@ https://github.com/s3rgs3m/Chash_HW2
 Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
 645 -> 5
-
 78 -> третьей цифры нет
-
 32679 -> 6
 
 Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
@@ -23,12 +21,23 @@ https://github.com/s3rgs3m/Chash_HW2
 Console.Write ("Введите номер задачи 10, 13 или 15: ");
 if (int.TryParse(Console.ReadLine(), out int taskNum)){
     switch (taskNum) {
-        case 10:
+        case 10: //Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
+                Console.Clear();
+                Console.WriteLine("Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.");
+                Console.Write("\nВведите число: ");
+                if (int.TryParse(Console.ReadLine(), out int number10))
+                    if (number10 < 100 || number10 > 999)
+                        Console.WriteLine ("Число должно быть трехзначным");
+                    else 
+                        Console.WriteLine ($"Вторая цифра числа {number10}: {number10 % 100 / 10}");
+                else
+                    Console.WriteLine ("Число введено не правильно");                
+            break;
+
+        case 13: // Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
 
             break;
-        case 13:
 
-            break;
         case 15:
 
             break;
@@ -37,4 +46,5 @@ if (int.TryParse(Console.ReadLine(), out int taskNum)){
             break;
     }
 }
-else Console.WriteLine ("Введен не номер");
+else
+    Console.WriteLine ("Введен не номер");
